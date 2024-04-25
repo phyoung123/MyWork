@@ -13,6 +13,25 @@
 
 ## round 1
 估计各个体积比下的晶格常数，用`VASP-MD`后最接近的结构作为`NEP-MD`的`model.xyz`，用得到的`nep`势跑`2ns`的主动学习，此时用的已经是`nvt_bdp`系综了，因为`model.xyz`已经是不同体积比了。抽取`20`个结构重新做单点计算。
+```python
+from ase.io import read, write
+
+atoms = read('CONTCAR-ovito-300kbar-3000K.vasp', format='vasp')
+print(atoms.cell[0,0])
+# atoms.cell[0] = [13.3109, 0, 0]
+# atoms.cell[1] = [ 0,13.3109, 0]
+# atoms.cell[2] = [ 0, 0,13.3109]
+new_length = 11.12194768
+
+new_cell = atoms.cell.copy()
+new_cell[0] = [new_length, 0, 0 ]
+new_cell[1] = [0, new_length, 0]
+new_cell[2] = [0, 0, new_length]
+atoms.set_cell(new_cell, scale_atoms=True)
+atoms.wrap()
+
+write("POSCAR-0.7V0.vasp", atoms, direct=True)
+```
 
 ## round 2
 鉴于上面的主动学习并没有使我的训练效果变好，我又增加了`VASP-AIMD`数据，并将抽取的结构做了微扰`perturb`，加入到数据集中重新训练，结果并没什么用，后来发现，`是因为有几个单点计算没有算收敛`, 现在GPUMD的tools里面将singleOUTCAR2xyz.sh的文件已经能够提示异常计算结果。也可用dpdata检查是否有异常计算结果（不收敛，或者任务异常中断导致未算完）
