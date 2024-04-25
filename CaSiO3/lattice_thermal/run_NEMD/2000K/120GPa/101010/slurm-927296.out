@@ -1,0 +1,122 @@
+
+***************************************************************
+*                 Welcome to use GPUMD                        *
+*     (Graphics Processing Units Molecular Dynamics)          *
+*                     Version 3.9                             *
+*              This is the gpumd executable                   *
+***************************************************************
+
+
+---------------------------------------------------------------
+Compiling options:
+---------------------------------------------------------------
+
+DEBUG is off: Use different PRNG seeds for different runs.
+
+---------------------------------------------------------------
+GPU information:
+---------------------------------------------------------------
+
+number of GPUs = 1
+Device id:                   0
+    Device name:             Tesla V100-SXM2-32GB
+    Compute capability:      7.0
+    Amount of global memory: 31.7394 GB
+    Number of SMs:           80
+
+---------------------------------------------------------------
+Started running GPUMD.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Started initializing positions and related parameters.
+---------------------------------------------------------------
+
+Number of atoms is 29160.
+Use periodic boundary conditions along x.
+Use periodic boundary conditions along y.
+Use periodic boundary conditions along z.
+Use orthogonal box.
+Box lengths are
+    Lx =     5.8822935548e+01 A
+    Ly =     5.8822935548e+01 A
+    Lz =     5.8822935548e+01 A
+Do not specify initial velocities here.
+Have no grouping method.
+There are 3 atom types.
+    5832 atoms of type 0.
+    5832 atoms of type 1.
+    17496 atoms of type 2.
+
+---------------------------------------------------------------
+Finished initializing positions and related parameters.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+Started executing the commands in run.in.
+---------------------------------------------------------------
+
+Use the NEP4 potential with 3 atom types.
+    type 0 (Ca with Z = 20).
+    type 1 (Si with Z = 14).
+    type 2 (O with Z = 8).
+    radial cutoff = 7 A.
+    angular cutoff = 5 A.
+    MN_radial = 219.
+    MN_angular = 86.
+    enlarged MN_radial = 274.
+    enlarged MN_angular = 108.
+    n_max_radial = 4.
+    n_max_angular = 4.
+    basis_size_radial = 12.
+    basis_size_angular = 12.
+    l_max_3body = 4.
+    l_max_4body = 2.
+    l_max_5body = 0.
+    ANN = 30-50-1.
+    number of neural network parameters = 4801.
+    number of descriptor parameters = 1170.
+    total number of parameters = 5971.
+Initialized velocities with T = 2000 K.
+Use NVT ensemble for this run.
+    choose the Nose-Hoover chain method.
+    initial temperature is 2000 K.
+    final temperature is 2000 K.
+    tau_T is 100 time_step.
+Time step for this run is 1 fs.
+Dump thermo every 1000 steps.
+Run 200000 steps.
+    20000 steps completed.
+    40000 steps completed.
+    60000 steps completed.
+    80000 steps completed.
+    100000 steps completed.
+    120000 steps completed.
+    140000 steps completed.
+    160000 steps completed.
+    180000 steps completed.
+    200000 steps completed.
+
+---------------------------------------------------------------
+Time used for this run = 2614.47 second.
+Speed of this run = 2.23066e+06 atom*step/second.
+---------------------------------------------------------------
+
+Use NVT ensemble for this run.
+    choose the Nose-Hoover chain method.
+    initial temperature is 2000 K.
+    final temperature is 2000 K.
+    tau_T is 100 time_step.
+Compute thermal conductivity using the HNEMD method.
+    output_interval = 1000
+    fe_x = 0 /A
+    fe_y = 0.001 /A
+    fe_z = 0 /A
+Run 7000000 steps.
+    700000 steps completed.
+    1400000 steps completed.
+    2100000 steps completed.
+    2800000 steps completed.
+slurmstepd: error: *** JOB 927296 ON g0003 CANCELLED AT 2023-11-28T22:17:52 ***

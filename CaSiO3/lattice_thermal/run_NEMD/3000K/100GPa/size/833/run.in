@@ -1,0 +1,16 @@
+potential    /data/home/scv8987/run/xufy/CaSiO3/lattice_thermal/total_data_set/train_2nd/train_add/nep.txt
+velocity     3000
+
+#ensemble     npt_ber 3000 3000 100 100 500 1000
+#ensemble     npt_mttk temp 3000 3000 iso 100 100
+ensemble     nvt_ber 3000 3000 100
+fix          0
+time_step    1
+dump_thermo  1000
+run          100000
+
+ensemble     heat_lan 3000 100 200 1 8
+fix          0
+dump_thermo  100000
+compute      0 10 100 temperature
+run          3000000
