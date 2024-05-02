@@ -1,0 +1,26 @@
+#Global Parameters
+ISTART =  0           
+LREAL  = Auto.
+ENCUT  =  600 
+PREC   =  ANormal
+LWAVE  =  F
+LCHARG =  F
+ADDGRID= .TRUE.
+NPAR = 4
+
+Electronic Relaxation
+ISMEAR =  0
+SIGMA  =  0.05
+EDIFF  =  1E-06
+ 
+Molecular Dynamics
+IBRION = -1
+NSW    = 1
+EDIFFG = -1E-02        (Ionic convergence, eV/A)
+POTIM  =  1 
+#MDALGO =  2          (Andersen Thermostat)
+ISYM   =  2          (Switch symmetry off)
+LSCALAPACK = .False 
+ISIF = 2
+
+KSPACING = 0.25
