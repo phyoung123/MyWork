@@ -1,0 +1,11 @@
+potential    ../../nep.txt
+velocity    2500
+#dftd3        pbe 12  6
+time_step   1
+
+#ensemble    npt_scr 2500 2500 50 1 50 500
+ensemble    nvt_bdp 2500 2500 100
+dump_exyz   100000 0 0
+dump_thermo 10000
+run         10000000
+
