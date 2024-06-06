@@ -75,12 +75,17 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 
 ### 失败的DFT计算
 1-active--> 5000K ---> 10 kbar ---> perturb ---> 10000/18600
+
 1-active--> 4000K ---> vasp/10kbar ---> 12/17
 
 2-SWSTU---> 3000K ---> 1.2V0 ---> vasp --->8400/15800/27200
+
 2-SWSTU---> 4000K--->10kbar ---> 1.1V0---> vasp ---> 8600
+
 2-SWSTU---> 4000K--->10kbar --->1.2V0 ---> Perturb-add ---> 23000
+
 2-SWSTU---> 5000K ---> 1.1V0 ---> Perturb ---> vasp ---> 17500
+
 2-SWSTU---> 5000K ---> 1.4V0 ---> vasp ---> 8900/15050/19550/26600
 
 然后训练了一个势函数。`tran-new/all/new-dataset/`
