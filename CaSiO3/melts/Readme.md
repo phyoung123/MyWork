@@ -35,6 +35,7 @@ write("POSCAR-0.7V0.vasp", atoms, direct=True)
 
 ## round 2
 鉴于上面的主动学习并没有使我的训练效果变好，我又增加了`VASP-AIMD`数据，并将抽取的结构做了微扰`perturb`，加入到数据集中重新训练，结果并没什么用，后来发现，`是因为有几个单点计算没有算收敛`, 现在GPUMD的tools里面将singleOUTCAR2xyz.sh的文件已经能够提示异常计算结果。也可用dpdata检查是否有异常计算结果（不收敛，或者任务异常中断导致未算完）。**相关的数据放在`2-SWSTU`里面。**
+
 dpdata导出成dp的npy格式，即可检查：
 
 用法： python vasp2deep.py < outcar_path >
