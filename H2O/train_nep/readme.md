@@ -25,4 +25,21 @@
 
 # NEP势函数训练过程
 ## round 1
-根据上面的初始数据集(大概6100个结构)，训练一个比较粗糙的nep势函数(15w步)。然后准备主动学习。
+根据上面的初始数据集(大概6100个结构)，训练一个比较粗糙的nep势函数(15w步)。然后准备主动学习。相关训练结果在 **round1** 文件夹下。
+
+### 主动学习
+在上面表格中对应的温度压力下跑NEP-MD，跑了1 ns， 步长0.5fs，每个轨迹提取了20个结构重新做了单点计算。结果在本地 CAEP/H2O/nep_train/run_md下面。
+
+跑NEP-MD时的run.in文件如下：
+```python
+potential    ../../nep.txt
+velocity    6000
+dftd3        revpbe 12  6
+time_step   0.5
+
+#ensemble    npt_scr 6000 6000 50 1 50 500
+ensemble    nvt_nhc 6000 6000 100
+dump_exyz   10000 0 0
+dump_thermo 1000
+run         1000000
+```
