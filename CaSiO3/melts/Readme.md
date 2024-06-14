@@ -95,8 +95,10 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 
 将上次训练的`train.xyz`按照9:1拆分成新的`train.xyz`和`test.xyz`，然后主动学习的`2500K`，`3000K`， `4000K`， `5000K`的数据全部加入到新的训练集中进行训练。原来的数据集中有 `4878` 帧构型，加入了`759`帧。所以现在新的`train.xyz`包含`5149`帧结构，`test.xyz`中包含`488`帧。
 
-**DFT数据集放在超算上的路径是：GPUMD_new/dataset-deep/3-active**，
-**DFT数据集放在本地机上的路径是：train-new/all/new-dataset/run_md**，
+**DFT数据集放在超算上的路径是：GPUMD_new/dataset-deep/3-active**
+
+**DFT数据集放在本地机上的路径是：train-new/all/new-dataset/run_md**
+
 **本地机训练相关路径：train-new/all/new-dataset/run_md/train-add**
 
 ## round 4
@@ -104,4 +106,5 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 
 ## round 5
 鉴于 `round 4`的结果其实并没有达到最好，后期处理`rdf`时发现还是有偏差，所以我还是准备将 `round 4`的DFT加入到训练集中继续训练。`round 4`中的`10ns`NEP-MD本来只输出了`100`个结构，`round 4`只从`9-99`间隔`10`提取了`10`个结构。这`10`个结构是在本地机上计算的。在本轮中，我还是将上述的`10`个结构加入训练集，并且重新加入了从`5-95`，间隔`10`个结构，总共`10`个结构加入训练集，并且还施加了一点微扰，但不是全部微扰。这些是在超算上计算的。但是准备利用`pynep`将原来的一些数据给他踢出去，但是将主动学习的结构全保留。
+
 **相关的DFT数据放在超算上的路径是： GPUMD_new/dataset-deep/4-active**
