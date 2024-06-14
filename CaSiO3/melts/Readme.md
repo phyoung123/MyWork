@@ -107,4 +107,8 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 ## round 5
 鉴于 `round 4`的结果其实并没有达到最好，后期处理`rdf`时发现还是有偏差，所以我还是准备将 `round 4`的DFT加入到训练集中继续训练。`round 4`中的`10ns`NEP-MD本来只输出了`100`个结构，`round 4`只从`9-99`间隔`10`提取了`10`个结构。这`10`个结构是在本地机上计算的，路径：`train-new/all/new-dataset/run_md/train-add/run_md`。在本轮中，我还是将上述的`10`个结构加入训练集，并且重新加入了从`5-95`，间隔`10`个结构，总共`10`个结构加入训练集，并且还施加了一点微扰，但不是全部微扰。这些是在超算上计算的。但是准备利用`pynep`将原来的一些数据给他踢出去，但是将主动学习的结构全保留。
 
+失败的DFT计算：4-active-10ns/5000/1.4/89
+
+4-active-10ns/4000/1.4-perturb/55
+
 **相关的DFT数据放在超算上的路径是： GPUMD_new/dataset-deep/4-active**
