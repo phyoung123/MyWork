@@ -112,3 +112,8 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 4-active-10ns/4000/1.4-perturb/55
 
 **相关的DFT数据放在超算上的路径是： GPUMD_new/dataset-deep/4-active**
+
+在用`pynep`挑选之前的结构数量分布：
+|       | 0-vasp  | 1-active  | 2-SWSTU  | 3-active-5ns  | 4-active-10ns  |
+| 挑之前 | 1584   | 565  |  2754  |  759 | 1224  |
+| 挑之后 |   |   |   |   |   |
