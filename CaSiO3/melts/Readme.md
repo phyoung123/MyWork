@@ -95,8 +95,8 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 
 将上次训练的`train.xyz`按照9:1拆分成新的`train.xyz`和`test.xyz`，然后主动学习的`2500K`，`3000K`， `4000K`， `5000K`的数据全部加入到新的训练集中进行训练。原来的数据集中有 `4878` 帧构型，加入了`759`帧。所以现在新的`train.xyz`包含`5149`帧结构，`test.xyz`中包含`488`帧。
 
-**DFT数据集放在超算上的路径是：GPUMD_new/dataset-deep/3-active**
-**DFT数据集放在本地机上的路径是：train-new/all/new-dataset/run_md**
+**DFT数据集放在超算上的路径是：GPUMD_new/dataset-deep/3-active**，
+**DFT数据集放在本地机上的路径是：train-new/all/new-dataset/run_md**，
 **本地机训练相关路径：train-new/all/new-dataset/run_md/train-add**
 
 ## round 4
