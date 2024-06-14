@@ -118,6 +118,7 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 先用 `grep_rmse_max.py` 将力大于`25A`的结构踢出去，将NEPdataset.xyz保存成ase_out.xyz。然后再用pynep挑选。
 
 | 数据集 | 0-vasp  | 1-active  | 2-SWSTU  | 3-active-5ns  | 4-active-10ns  |
+|-------|----------|----------|----------|----------------|----------------|
 | 挑之前 |  1584   | 565       |  2754    |      759      |      1224      |
 | 踢掉后 |  1578   | 563       |  2737    |      759      |      1198      |
 | 挑之后 |   660   | 469       |  1666    |      759      |      1198      |
