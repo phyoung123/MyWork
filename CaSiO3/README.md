@@ -1,0 +1,1 @@
+3808 来自于 ~/total_data_set/train_2nd/train_add/prediction/train-active-2 里面的train.xyz和test.xyz之和。

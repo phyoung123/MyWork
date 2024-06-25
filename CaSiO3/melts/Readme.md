@@ -124,3 +124,5 @@ total_system[:split_num].to_deepmd_raw('./data/training_set', set_size=2000)
 | 挑之后(selected.xyz) |   1095   | 469       |  1666    |      759      |      1198      |
 
 `2-SWSTU`挑选的时候`pynep`选择`0.007`，`0-vasp`和`1-active`选择的`0.008`。`3-active-5ns` 和`4-active-10ns` 除了筛选出力大于25A的以外全部纳入训练。
+
+**训练路径：GPUMD_new/train-new/all/new-dataset/run_md/train-add/run_md/train-add-2**
